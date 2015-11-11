@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery FAQ / Accordion</title>
+
+<script src="js/jquery-2.1.4.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $("#faq h3").click(function() {
+            $(this).toggleClass("open");
+            if ($(this).attr("class") !== "open") {
+                $(this).next().slideUp(1000);
+            } else {
+                $(this).next().slideToggle(1000);
+            };
+        });
+    });
+      
+</script>
+
+<style>
+    body {
+        background-image: url(images/double_down_arena.jpg);
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    main {
+        margin: 0 auto 100px;
+        padding: 20px;
+        width: 960px;
+        background-color: white;
+    }
+    h1 {
+        text-align: center;
+    }
+    h3 {
+        margin: 5px auto 0;
+        padding: 5px 40px;
+        width: 80%;
+        height: 20px;
+        border-radius: 5px;            
+        background-image: url(images/closed_bg.png);
+        color: white;
+    }
+    h3:hover {
+        cursor: pointer;
+    }
+    .open {
+        background-image: url(images/open_bg.png);
+        border-radius: 5px 5px 0 0;
+    }
+    div {
+        display: none;
+        margin: 0 auto;
+        width: 80%;
+        border: solid white 1px;
+    }
+  
+    footer {
+        width: 80%;
+        clear: both;
+        text-align: center;
+        margin: 20px auto;
+    }
+</style>
+
+</head>
+
+<body>
+    <main id="faq">
+        <h1>Darkwind FAQ</h1>
+        
+<!--        <div id="accordion">-->
+           <h3>What is Darkwind?</h3>
+            <div>
+               <p>Darkwind is a turn-based, 3D persistent-world, multiplayer wargame set in the near future, which combines the depth of detail inherent in turn-based games, with long-term strategic elements that keep the challenge going for months / years.</p>
+            </div>
+            
+            <h3>What is the Darkwind World?</h3>
+            <div>
+               <p>Darkwind takes place in an interesting, post-apocalyptic environment and all sorts of strange creatures lurk the wastelands between towns which could make travel even more dangerous because of risky encounters.</p>
+                <p>The towns are each home to several vehicular combat arenas and racing tracks where various deadly events are hosted.</p>
+                <p>There are various different regions across Evan and around the towns where your wilderness encounters could and will happen. Take a Grand Tour around the various places that you will come across.</p>
+            </div>
+            
+            <h3>Who are the Darkwind gangs?</h3>
+            <div>
+              <p>Owned by either players or NPCs, gangs are made up of individual characters. You can find useful info all about their various skills, abilities and specialisms, and how they function as pedestrians when not in a vehicle.</p>
+                <p>A level up from gangs are camps, which are usually operated by several gangs working together. Camps can manufacture various equipment.</p>
+            </div>
+            
+            <h3>How does turn-based racing work, it sounds unusual?</h3>
+            <div>
+               <p>A number of turn-based racing games already exist (including some excellent board games). Darkwind is the only one we know of that combines accurate physics with turn-based play. Essentially, the race becomes purely about the tactics of entering and exiting corners, overtaking, and generally breaking down the nuances of driving that become automated in a traditional driving game. After all, real world professional racing is much more to do with tactics than reactions - just watch an F1 or Nascar race on TV. By making the game turn based we're letting the players all race more professionally, letting them battle it out tactically rather just seeing who's first to make some dumb mistake, which is what happens in most computer racing games.</p>
+                <p>Another major reason for making Darkwind turn-based is to allow highly detailed rules and strategy: these things are not possible in real-time games. Players need time to assign orders to their characters and vehicles. It's a totally different experience to standard real-time car games. Think of it as a massively-multiplayer boardgame: you have time to chat, you have time to smack-talk, you have time to watch each other's moves as well as your own. You win by having good strategy and tactics, not by having the best reactions.</p>
+            </div>
+            
+            <h3>Is the game multiplayer-only?</h3>
+            <div>
+               <p>No. The Darkwind world is populated not only with player gangs but also with computer-controlled gangs who compete in the same fashion as human players - you will meet them racing, fighting, pirating, trading, and building up their skills and money alongside your gang.</p>
+            </div>
+                       
+            <h3>What is Darkwind Scavenger?</h3>           
+            <div>
+                <p>Darkwind:Scavenger is a new game within Darkwind. In DW:Scav, there is no money. Stuff breaks much faster. You will find yourself scrounging up enough food and water to survive, and feeling lucky if you can field a not-too-badly worn pair of machine guns on your car.</p>
+                <p>Life in DW:Scav is short and harsh - it returns Darkwind to its post-apocalyptic roots. More apocalypse, less country-club.</p>
+                <p>To create your Scavenger gang, you must be a Darkwind Subscriber. Open your 'My Gang' page and you will see a button to create your Scavenger gang, which will operate as a separate gang to your regular Darkwind gang. You can switch from your "Normal gang" to your "Scavenger gang" by clicking the switch option.</p>
+            </div>           
+<!--            </div>-->
+        
+        <footer><hr>
+            Somerset Steel &amp; Supply &copy; 2015</footer>
+        
+    </main>
+     
+</body>
+</html>

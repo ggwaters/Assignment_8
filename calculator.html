@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>The Clown Calculator</title>
+
+<script src="js/jquery-2.1.4.min.js"></script>
+
+<style>
+    main {
+        margin: 0 auto;
+        width: 960px;
+    }
+    #calculator,nav {
+        margin: 0 auto 40px;
+        width: 180px;
+    }
+    h2, h3 {
+        text-align: center;
+    }
+</style>
+
+<script>
+    $(document).ready(function() {
+        $("input").css({"margin": "10px 0 0 10px", "padding": "5px 10px" });
+        $("#result").css({"margin-left": "-10px", "padding-right": "20px", "backgroundColor": "indigo", "border": "outset 3px purple", color: "white", textAlign: "right"});
+        $("#clear").css("padding", "5px 65px");
+        $("#seven").css({"backgroundColor": "red", "border": "solid 1px yellow"});
+        $("#eight").css({"backgroundColor": "blue", "border": "dotted 2px grey", color: "white"});
+        $("#nine").css({"backgroundColor": "orange", "border": "dashed 3px black"});
+        $("#divide").css({"backgroundColor": "yellow", "border": "double 2px red"});
+        $("#four").css({"backgroundColor": "grey", "border": "groove 1px purple"});
+        $("#five").css({"backgroundColor": "white", "border": "ridge 2px blue"});
+        $("#six").css({"backgroundColor": "pink", "border": "inset 3x green"});
+        $("#multiply").css({"backgroundColor": "beige", "border": "outset 2px green"});
+        $("#one").css({"backgroundColor": "magenta", "border": "solid 1px green"});
+        $("#two").css({"backgroundColor": "purple", "border": "dotted 2px green"});
+        $("#three").css({"backgroundColor": "hazel", "border": "dashed 3px green"});
+        $("#subtract").css({"backgroundColor": "green", "border": "double 2px green"});
+        $("#zero").css({"backgroundColor": "black", "border": "groove 1px green", color: "white"});
+        $("#period").css({"backgroundColor": "violet", "border": "ridge 2px green"});
+        $("#add").css({"backgroundColor": "lime", "border": "inset 3px green"});
+        $("#equal").css({"backgroundColor": "cyan", "border": "outset 2px green"});
+        $("#clear").css({"backgroundColor": "brown", "border": "solid 1px green", color: "white"});
+        $("input:lt(16)").click(function() {
+            var inputVal = $(this).val();
+            if (inputVal == "+" || inputVal == "-" || inputVal == "*" ||inputVal == "/") {
+                result.value += " " + inputVal + " ";
+            } else {
+                result.value += inputVal; 
+            }
+        });
+        $("#equal").click(function(){
+            var solution = eval(result.value);
+            $("#result").val(solution);
+        });    
+        $("#clear").click(function() {
+            $("#result").val("");
+        });
+    });
+</script>
+
+</head>
+
+<body>
+    <main>
+        
+        <h3>The Clown Calculator (15 points)</h3>
+
+    <p>In this part of the assignment you will practice working with jQuery events, styles, and DOM manipulation to create an even better version of the calculator that you created in previous assignments. In this part of the assignment you will use jQuery events to handle the interaction between the user and each button in the calculator. You will also use jQuery styling techniques to stylize all of the calculator buttons and the display. To complete this, follow the steps outlined below:</p>
+    
+    <ul>
+       <li>Notice the markup that I’ve included for you in the web page. There is a text box that will display the value of each button click and 16 different buttons each of which represents a major key on a basic calculator. Begin by referencing the jQuery library and then immediately wire up the jQuery .ready() function. </li>
+        <li>This first part will require you to stylize all of the buttons programmatically. Using jQuery make each button the same width and height, give each button a unique background color, border style, width and color. Also, give the display a unique background color, set the font color and size, and set a unique border style, width, and color.</li>
+        <li>Reference the “bubble capture” code from assignment 6. Rewrite this code so that it uses jQuery events and makes use of jQuery DOM manipulation techniques to set the display based on button selections made.</li>
+    </ul>
+
+
+        
+    <section id="calculator">
+
+        <input type="text" readonly id="result" placeholder="0">
+        <br>
+        <input type="button" id="seven" value="7">
+        <input type="button" id="eight" value="8">
+        <input type="button" id="nine" value="9">
+        <input type="button" id="divide" value="/">
+        <br>
+        <input type="button" id="four" value="4">
+        <input type="button" id="five" value="5">
+        <input type="button" id="six" value="6">
+        <input type="button" id="multiply" value="*">
+        <br>
+        <input type="button" id="one" value="1">
+        <input type="button" id="two" value="2">
+        <input type="button" id="three" value="3">
+        <input type="button" id="subtract" value="-">
+        <br>
+        <input type="button" id="zero" value="0">
+        <input type="button" id="period" value=".">
+        <input type="button" id="add" value="+">
+        <input type="button" id="equal" value="=">
+        <br>
+        <input type="button" id="clear" value="Clear">
+
+    </section>
+    
+        <nav>  
+            <p>go to <a href="assignment_eight_part_one.html" target="_blank">part one</a></p>
+            <p>go to <a href="muscle_porn.html" target="_blank">image swap app</a></p>
+            <p>go to <a href="tabs.html" target="_blank">tabs app</a></p>
+            <p>go to <a href="accordion.html" target="_blank">faq app</a></p>
+            <script>
+                $("nav").css("margin-top": "30px");    
+            </script>
+        </nav>
+
+  </main>
+     
+</body>
+</html>

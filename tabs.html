@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery Tabs</title>
+
+<script src="js/jquery-2.1.4.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $("a").click(function(){
+            var articleJump = $(this).attr("href");
+            $("a").removeClass("ActiveTab");
+            $(this).addClass("ActiveTab");
+            $("article").removeClass("ActiveArticle");
+            $(articleJump).addClass("ActiveArticle");
+        })
+    });
+</script>
+
+<style>
+    body {
+        background-image: url(images/somerset.jpg);
+        background-size: cover;
+    }
+    main {
+        margin: 40px auto;
+        padding: 20px;
+        width: 960px;
+        background-color: white;
+    }
+    h1, h2, h3 {
+        text-align: center;
+    }
+    ul {
+        margin-left: -40px;
+    }
+    ul li {
+        list-style-type: none;
+        display: inline;
+    }
+    a { 
+        padding: 5px 20px;
+        text-decoration: none;
+        color: white;
+        background-color: black;
+        font-size: 1.25em;
+        border-radius: 10px 10px 0 0;
+    }
+    img {
+        float: left;
+        margin: 0 20px 20px 0;
+    }
+    a:hover {
+        background-color: darkgrey;
+        color: black;
+    }
+    .ActiveTab {
+        background-color: white;
+        color: black;
+        font-weight: bold;
+    }
+    article {
+        display: none;
+    }
+    .ActiveArticle {
+        display: block;
+    }
+    footer {
+        clear: both;
+        text-align: center;
+        margin-top: 20px;
+    }
+</style>
+
+</head>
+
+<body>
+    <main>
+        <h1>Somerset Steel and Supply Home Office</h1>
+        
+        <ul class="tabs">
+            <li><a href="#taco" id="TabOne" class="ActiveTab">"Taco"</a></li>
+            <li><a href="#patrick" id="TabTwo">"Saint Patrick"</a></li>
+            <li><a href="#dona" id="TabThree">"Dona" Michele</a></li>
+            <li><a href="#digger" id="TabFour">"Digger" Mercado</a></li>
+        </ul>
+        
+        <section>
+            <article id="taco" class="ActiveArticle">
+               <img src="images/taco.jpg" width="150px" height="auto" alt="owner of Somerset Steel, 'Taco' Lifeson" title="'Taco' Lifeson">
+                <p><strong>Jason “Taco” Lifeson</strong><br>
+                    Owner of Somerset Steel and Supply, Crew Chief of Somerset Steel</p>
+                <p>Fourth generation owner of Somerset Steel and Supply, “Taco” continues on the proud role of protector and provider for the Somerset community. Well respected by local squadrons and community leaders, he does his best juggling his dual role of running the business and commanding the Somerset Steel squad.</p>
+            </article>
+            
+            <article id="patrick">
+               <img src="images/patrick.jpg" width="150px" height="auto" alt="lead mech 'Saint Patrick' Havel" title="'Saint Patrick' Havel">
+                <p><strong>“Saint” Patrick Havel</strong><br>
+                    Lead Mech, Somerset Steel and Supply</p>
+                <p>If you return to town with a smoking wreck, “Saint Patrick” is the the mech that you would look to for a miracle. Having been lead mech for Somerset Steel and Supply now for three years, he has proven to be a valuable asset for the garage.</p>
+            </article>
+            
+            <article id="dona">
+                <img src="images/dona.jpg" width="150px" height="auto" alt="the sexy 'Dona' Michele" title="'Dona' Michele">
+                <p><strong>“Dona” Michele</strong><br>
+                    Lead Sales Rep, Somerset Steel and Supply</p>
+                <p>“Taco” may be the owner and proprietor of Somerset Steel and Supply, but “Dona” Michele gets things out the door and off the lot. Since her arrival a few years ago in Somerset she has turned the business into a well tuned machine. Her plethora of talents include keeping the books, running the sales lot, and keeping the armory well oiled and stocked. When she is not in the shop, she is out on the range ‘testing’ the products for quality assurance needs.</p>
+            </article>
+            
+            <article id="digger">
+                <img src="images/digger.jpg" height="150px" width="auto" alt="the deadly 'Digger' Mercado" title="'Digger' Mercado">
+                <p><strong>“Digger” Mercado</strong><br>
+                    Crew Chief of Steel Harvest, Contributor to Tavern Tales</p>
+                <p>When Steel Harvest rolls out on patrol, raiders turn tail because of this man. Not only is he a fierce combatant and brilliant tactician, he can tell a good tale. Now that we have the eHub back up we have him contributing to Tavern Tales.</p>
+            </article>
+            
+        </section>
+        <footer><hr>
+            Somerset Steel &amp; Supply &copy; 2015</footer>
+        
+    </main>
+     
+</body>
+</html>

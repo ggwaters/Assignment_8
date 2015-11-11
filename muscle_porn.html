@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery Image Swap</title>
+<link href='https://fonts.googleapis.com/css?family=Racing+Sans+One' rel='stylesheet' type='text/css'>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // preload images
+        $("#image_list a").each(function() {
+            var swappedImage = new Image();
+            swappedImage.src = $(this).attr("href");
+        });
+        
+        // swap image
+        var originalImage = $("#image");
+        $("#image_list a").click(function(evt) {
+            var imageURL = $(this).attr("href");
+            $("#image").attr("src", imageURL).hide().fadeIn(2000);
+             
+            // cancel link default event
+            evt.preventDefault();
+        });     
+        
+        // modify active thumbnail                                     
+        $("ul li img").mouseenter(function() {
+            $(this).fadeTo("fast", .7);
+            $(this).click(function() {
+                $("ul li img").removeClass("active");
+                $(this).fadeTo("fast", 1).addClass("active");
+            })
+        });
+        $("ul li img").mouseout(function() {
+            $(this).fadeTo("fast", 1);
+        });
+        
+        // the whole focus thing
+        $("li:first-child a").focus();
+    });
+    
+</script>
+
+<style>
+    body {
+        background: url(images/sports-checkered-flag.png);
+    }
+    main {
+        margin: 0 auto 100px;
+        padding: 20px;
+        background-color: white;
+        width: 960px;
+    }
+    h1 {
+        font-family: 'Racing Sans One', cursive;
+        font-size: 4em;
+        text-align: center;
+        line-height: 0;
+    }
+    ul {
+        margin-left: -40px;
+    }
+    ul li {
+        margin-right: 1%;
+        list-style-type: none;
+        display: inline;
+    }
+    img {
+        box-shadow: 5px 5px 5px #777777;
+    }
+    .active {
+        box-shadow: 2px 2px 2px #888888;
+    }
+</style>
+
+</head>
+
+<body>
+    <main>
+
+        <section>
+            <h1>Muscle Porn</h1>
+
+            <p><img src="images/muscle_porn_01.png" width="100%" height="auto" id="image"></p>
+            
+            <ul id="image_list">
+                <li><a href="images/muscle_porn_01.png" title="'71 Dodge">
+                    <img src="images/muscle_thumb_01.png" alt="" class="active"></a></li>
+                <li><a href="images/muscle_porn_02.png" title="'69 Nova">
+                    <img src="images/muscle_thumb_02.png" alt=""></a></li>  
+                <li><a href="images/muscle_porn_03.png" title="'71 Dodge">
+                    <img src="images/muscle_thumb_03.png" alt=""></a></li>  
+                <li><a href="images/muscle_porn_04.png" title="'78 Ford">
+                    <img src="images/muscle_thumb_04.png" alt=""></a></li>  
+                <li><a href="images/muscle_porn_05.png" title="'70 Plymouth & '44 B-17">
+                    <img src="images/muscle_thumb_05.png" alt=""></a></li>  
+                <li><a href="images/muscle_porn_06.png" title="'70 Ford">
+                    <img src="images/muscle_thumb_06.png" alt=""></a></li>                  
+            </ul>
+
+        </section>
+        
+        <nav>  
+            <p>go to <a href="calculator.html" target="_blank">calculator app</a></p>
+            <p>go to <a href="muscle_porn.html" target="_blank">image swap app</a></p>
+            <p>go to <a href="tabs.html" target="_blank">tabs app</a></p>
+            <p>go to <a href="accordion.html" target="_blank">faq app</a></p>
+            <script>
+                $("nav").css("margin-top", "30px");    
+            </script>
+        </nav>
+
+    </main>
+     
+</body>
+</html>
